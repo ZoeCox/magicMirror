@@ -3,6 +3,7 @@ import { responses } from "./fortuneVals.js";
 const mirrorContainer = document.querySelector("#mirror-container");
 const submitBtn = document.querySelector("#submit-button");
 const resetBtn = document.querySelector("#reset-button");
+const questionSection = document.querySelector("#user-question-section");
 
 const radioButtons = {
   environmentRadios: document.getElementsByName("environment-option"),
@@ -19,6 +20,8 @@ const userChoice = {
 
 const fortuneDecider = (environmentAnswer) => {
   if (userChoice.badPoints > userChoice.goodPoints) {
+    questionSection.classList.add("hidden");
+    mirrorContainer.classList.remove("hidden");
     switch (environmentAnswer) {
       case "alone":
         mirrorContainer.innerHTML = responses.negative.alone;
@@ -38,6 +41,8 @@ const fortuneDecider = (environmentAnswer) => {
     }
   }
   if (userChoice.goodPoints > userChoice.badPoints) {
+    questionSection.classList.add("hidden");
+    mirrorContainer.classList.remove("hidden");
     switch (environmentAnswer) {
       case "alone":
         mirrorContainer.innerHTML = responses.positive.alone;
