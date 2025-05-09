@@ -1,9 +1,14 @@
+:root {
+  --BGcolor: pink;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Tagesschrift", sans-serif;
   font-size: 1.25em;
+  background-color: var(--BGcolor);
 }
 
 main {
