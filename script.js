@@ -4,6 +4,10 @@ const mirrorContainer = document.querySelector("#mirror-container");
 const submitBtn = document.querySelector("#submit-button");
 const resetBtn = document.querySelector("#reset-button");
 const questionSection = document.querySelector("#user-question-section");
+const nameInput = document.querySelector("#user-name-input");
+const nameSubmit = document.querySelector("#name-submit");
+const nameLabel = document.querySelector("#user-name-label");
+let userName;
 
 const radioButtons = {
   environmentRadios: document.getElementsByName("environment-option"),
@@ -24,19 +28,24 @@ const fortuneDecider = (environmentAnswer) => {
     mirrorContainer.classList.remove("hidden");
     switch (environmentAnswer) {
       case "alone":
-        mirrorContainer.innerHTML = responses.negative.alone;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.negative.alone;
         break;
       case "business":
-        mirrorContainer.innerHTML = responses.negative.business;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.negative.business;
         break;
       case "creative":
-        mirrorContainer.innerHTML = responses.negative.creative;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.negative.creative;
         break;
       case "farm":
-        mirrorContainer.innerHTML = responses.negative.farm;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.negative.farm;
         break;
       case "family":
-        mirrorContainer.innerHTML = responses.negative.family;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.negative.family;
         break;
     }
   }
@@ -45,28 +54,43 @@ const fortuneDecider = (environmentAnswer) => {
     mirrorContainer.classList.remove("hidden");
     switch (environmentAnswer) {
       case "alone":
-        mirrorContainer.innerHTML = responses.positive.alone;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.positive.alone;
         break;
       case "business":
-        mirrorContainer.innerHTML = responses.positive.business;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.positive.business;
         break;
       case "creative":
-        mirrorContainer.innerHTML = responses.positive.creative;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.positive.creative;
         break;
       case "farm":
-        mirrorContainer.innerHTML = responses.positive.farm;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.positive.farm;
         break;
       case "family":
-        mirrorContainer.innerHTML = responses.positive.family;
+        mirrorContainer.innerHTML =
+          `${userName}:` + " " + responses.positive.family;
         break;
     }
   }
 };
+
+nameSubmit.addEventListener("click", () => {
+  if (nameInput.value !== undefined && nameInput.value !== "") {
+    userName = nameInput.value;
+    nameSubmit.classList.add("hidden");
+    nameInput.classList.add("hidden");
+    nameLabel.classList.add("hidden");
+  }
+});
+
 submitBtn.addEventListener("click", () => {
+  resetBtn.classList.remove("hidden");
   for (let i = 0; i < radioButtons.environmentRadios.length; i++) {
     if (radioButtons.environmentRadios[i].checked) {
       userChoice.environmentType = radioButtons.environmentRadios[i].value;
-      console.log(userChoice.environmentType);
     }
   }
   for (let j = 0; j < radioButtons.trolleyRadios.length; j++) {
@@ -74,7 +98,6 @@ submitBtn.addEventListener("click", () => {
       radioButtons.trolleyRadios[j].value === "return-trolley"
         ? userChoice.goodPoints++
         : userChoice.badPoints++;
-      console.log(userChoice.badPoints, userChoice.goodPoints);
     }
   }
   for (let k = 0; k < radioButtons.moneyRadios.length; k++) {
@@ -82,7 +105,6 @@ submitBtn.addEventListener("click", () => {
       radioButtons.moneyRadios[k].value === "give-back"
         ? userChoice.goodPoints++
         : userChoice.badPoints++;
-      console.log(userChoice.badPoints, userChoice.goodPoints);
     }
   }
   for (let l = 0; l < radioButtons.doorRadios.length; l++) {
@@ -94,7 +116,6 @@ submitBtn.addEventListener("click", () => {
     }
   }
   fortuneDecider(userChoice.environmentType);
-  console.log("submit button clicked");
 });
 
 resetBtn.addEventListener("click", () => {

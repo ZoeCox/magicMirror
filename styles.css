@@ -2,12 +2,16 @@
   --BGcolor: pink;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Tagesschrift", sans-serif;
-  font-size: 1.25em;
+  font-size: 1.35em;
   background-color: var(--BGcolor);
 }
 
@@ -15,8 +19,11 @@ main {
   text-align: center;
 }
 
-.hidden {
-  display: none;
+button,
+input {
+  margin: 1em 0 1em 0;
+  font-family: "Tagesschrift", sans-serif;
+  font-size: 1.15em;
 }
 
 #mirror-section {
@@ -26,8 +33,35 @@ main {
 }
 
 #mirror-container {
-  background-color: rgb(154, 233, 233);
-  border: solid black 0.5em;
-  height: 25vh;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  height: 30vh;
   width: 50vw;
+}
+
+#mirror-container:after {
+  /* height: 75%;
+  width: 75%; */
+  border: solid black 0.5em;
+  content: "";
+  display: block;
+  z-index: -1;
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  bottom: -2rem;
+  left: 0;
+  background-image: linear-gradient(
+    rgb(65, 65, 209),
+    rgb(169, 169, 238),
+    rgb(170, 212, 212)
+  );
+  animation: rotate-gradient alternate-reverse 8s infinite;
+}
+
+@keyframes rotate-gradient {
+  to {
+    transform: rotate(180deg);
+  }
 }

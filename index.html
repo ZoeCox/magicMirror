@@ -15,9 +15,12 @@
         <main>
             <section id="user-question-section">
                 <div id="user-details-container">
-                    <input placeholder="Enter your name here"></input>
-                    <div id="environment-container">
+                    <label id="user-name-label" for="user-name-input">Name:</label>
+                    <input id="user-name-input" autocomplete="on" required aria-required="true" type="text" name="username" minlength="1" maxlength="20" placeholder="Enter your name here">
+                    <input type="submit" id="name-submit">
                     <p>In what kind of enivornment do you prefer to be in?</p>
+                    <p id="dropdown-environment">⬇️</p>
+                    <div id="environment-container" class="hidden">
                     <input id="alone" name="environment-option"type="radio" value="alone"></input>            
                     <label for="alone">On your own</label>
                     <input id="business" name="environment-option"type="radio" value="business"></input>     
@@ -30,22 +33,25 @@
                      <label for="family">Anywhere with those who are important to you</label>
                 </div>
                 <div id="moral-container">
-                    <div id="moral-part1-container">
                     <p>You see an abandoned shopping trolley in a car park that isn't yours, do you?</p>
+                   <p id="dropdown-moral1">⬇️</p>
+                    <div id="moral-part1-container" class="hidden">
                     <input id="return-trolley" name="trolley-option"type="radio" value="return-trolley"></input>            
                     <label for="return-trolley">Return it to the trolley park</label>
                     <input id="leave-trolley" name="trolley-option"type="radio" value="leave-trolley"></input>     
                     <label for="leave-trolley">Leave it as it is</label> 
                     </div>   
-                     <div id="moral-part2-container">
                     <p>Someone walking in front of you drops a note of £5 in value, but doesn't notice. Do you either?</p>
+                    <p id="dropdown-moral2">⬇️</p> 
+                    <div id="moral-part2-container" class="hidden">
                     <input id="take-money" name="money-option"type="radio" value="take-money"></input>     
                     <label for="take-money">Pick it up and sneak it into your pocket</label>
                           <input id="give-back" name="money-option"type="radio" value="give-back"></input>            
                     <label for="give-back">Catch up to them and return the money</label> 
                     </div>    
-                       <div id="moral-part3-container">
                     <p>You are running a little late for something important and someone is further behind you, also looking busy, but not directly behind you as you go through a door, do you?</p>
+                    <p id="dropdown-moral3">⬇️</p>
+                    <div id="moral-part3-container" class="hidden">
                     <input id="hold-open" name="door-option"type="radio" value="hold-open"></input>     
                     <label for="hold-open">Spend a few seconds waiting to hold the door open for them too</label>
                           <input id="let-close" name="door-option"type="radio" value="let-close"></input>            
@@ -61,9 +67,10 @@
             </section>
             <section id="result-section"><div
                     id="fortune-container">
-                    <button id="reset-button">Reset</button></div></section>
+                    <button class="hidden" id="reset-button">Reset</button></div></section>
         </main>
-        <script src="script.js" type="module"></script>
         <script src="fortuneVals.js" type="module"></script>
+        <script src="dropdown.js" type="module"></script>
+        <script src="script.js" type="module"></script>
     </body>
 </html>
