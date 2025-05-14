@@ -26,54 +26,58 @@ const fortuneDecider = (environmentAnswer) => {
   if (userChoice.badPoints > userChoice.goodPoints) {
     questionSection.classList.add("hidden");
     mirrorContainer.classList.remove("hidden");
-    switch (environmentAnswer) {
-      case "alone":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.negative.alone;
-        break;
-      case "business":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.negative.business;
-        break;
-      case "creative":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.negative.creative;
-        break;
-      case "farm":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.negative.farm;
-        break;
-      case "family":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.negative.family;
-        break;
-    }
+    setTimeout(() => {
+      switch (environmentAnswer) {
+        case "alone":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.negative.alone;
+          break;
+        case "business":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.negative.business;
+          break;
+        case "creative":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.negative.creative;
+          break;
+        case "farm":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.negative.farm;
+          break;
+        case "family":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.negative.family;
+          break;
+      }
+    }, 4500);
   }
   if (userChoice.goodPoints > userChoice.badPoints) {
     questionSection.classList.add("hidden");
     mirrorContainer.classList.remove("hidden");
-    switch (environmentAnswer) {
-      case "alone":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.positive.alone;
-        break;
-      case "business":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.positive.business;
-        break;
-      case "creative":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.positive.creative;
-        break;
-      case "farm":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.positive.farm;
-        break;
-      case "family":
-        mirrorContainer.innerHTML =
-          `${userName}:` + " " + responses.positive.family;
-        break;
-    }
+    setTimeout(() => {
+      switch (environmentAnswer) {
+        case "alone":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.positive.alone;
+          break;
+        case "business":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.positive.business;
+          break;
+        case "creative":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.positive.creative;
+          break;
+        case "farm":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.positive.farm;
+          break;
+        case "family":
+          mirrorContainer.innerHTML =
+            `${userName}:` + " " + responses.positive.family;
+          break;
+      }
+    }, 4500);
   }
 };
 

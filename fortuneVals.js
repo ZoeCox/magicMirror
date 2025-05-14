@@ -1,7 +1,7 @@
 const responses = {
   positive: {
     business: `you will amass large fortune in business ventures, and have huge financial success.`,
-    farm: `will find contentment in running a rural farm. Its success will be large and you will be the envy of fellow farmets/`,
+    farm: `will find contentment in running a rural farm. Its success will be large and you will be the envy of fellow farmers.`,
     creative: `you will find find major success in your creative field and beome critically acclaimed in it.`,
     alone: `you seek happiness alone and in the company of animals. Your futures takes you to a cottage in the forest with several cats or dogs of your choice.`,
     family: `you find the love of your life and settle with them, having as many children as you wish.`,

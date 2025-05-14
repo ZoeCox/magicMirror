@@ -33,17 +33,18 @@ input {
 }
 
 #mirror-container {
+  font-size: 85%;
+  margin: 6em 0 6em 0;
   position: relative;
-  overflow: hidden;
   background-color: transparent;
-  height: 30vh;
-  width: 50vw;
+  height: 20vh !important;
+  width: 60vw !important;
 }
 
 #mirror-container:after {
-  /* height: 75%;
-  width: 75%; */
-  border: solid black 0.5em;
+  height: 20vh !important;
+  width: 60vw !important;
+  border: solid black 0.25em;
   content: "";
   display: block;
   z-index: -1;
@@ -57,11 +58,11 @@ input {
     rgb(169, 169, 238),
     rgb(170, 212, 212)
   );
-  animation: rotate-gradient alternate-reverse 8s infinite;
+  animation: rotate-gradient alternate-reverse 4s;
 }
 
 @keyframes rotate-gradient {
   to {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
 }
